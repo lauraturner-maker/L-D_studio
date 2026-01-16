@@ -1,0 +1,189 @@
+<div class="nv-widget-container">
+    <style>
+        /* Scoped CSS to prevent conflict with Staffbase global styles */
+        .nv-widget-container {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            border-top: 4px solid #76B900; /* NVIDIA Green */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .nv-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .nv-header h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nv-header p {
+            color: #cccccc;
+            font-size: 16px;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
+        .nv-header span.highlight {
+            color: #76B900;
+            font-weight: bold;
+        }
+
+        .nv-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .nv-card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 6px;
+            padding: 25px;
+            flex: 1 1 300px; /* Responsive flex */
+            max-width: 350px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Hover Effect: Glow Green */
+        .nv-card:hover {
+            border-color: #76B900;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(118, 185, 0, 0.15);
+        }
+
+        .nv-card-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: #76B900;
+        }
+
+        .nv-card h3 {
+            font-size: 20px;
+            margin: 0 0 10px 0;
+            color: #fff;
+        }
+
+        .nv-card p {
+            font-size: 14px;
+            color: #aaaaaa;
+            line-height: 1.6;
+            flex-grow: 1; /* Pushes button to bottom */
+            margin-bottom: 20px;
+        }
+
+        .nv-badge {
+            display: inline-block;
+            font-size: 10px;
+            background-color: #333;
+            color: #fff;
+            padding: 4px 8px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nv-btn {
+            background-color: transparent;
+            border: 1px solid #76B900;
+            color: #76B900;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 4px;
+            transition: background 0.3s, color 0.3s;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .nv-btn:hover {
+            background-color: #76B900;
+            color: #000;
+        }
+
+        /* Active/Enrolled State */
+        .nv-btn.active {
+            background-color: #76B900;
+            color: #000;
+            border-color: #76B900;
+            cursor: default;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .nv-header h2 { font-size: 22px; }
+            .nv-widget-container { padding: 15px; }
+        }
+    </style>
+
+    <div class="nv-header">
+        <h2>NVIDIA <span class="highlight">Learning Pathways</span></h2>
+        <p>Master the future. Explore new modules designed to keep every Nvidian at the forefront of AI and Accelerated Computing.</p>
+    </div>
+
+    <div class="nv-grid">
+        <div class="nv-card">
+            <div class="nv-badge">Core Milestone</div>
+            <div class="nv-card-icon">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10H12V2z"></path><path d="M12 12a10 10 0 0 1-10 10V12h10z"></path><path d="M12 12A10 10 0 0 0 2 2v10h10z"></path></svg>
+            </div>
+            <h3>Generative AI Fundamentals</h3>
+            <p>Deep dive into the architecture of <strong>LLMs</strong> and <strong>Transformer models</strong>. Understand the software stack driving the AI revolution.</p>
+            <button class="nv-btn" onclick="toggleEnroll(this)">Start Module</button>
+        </div>
+
+        <div class="nv-card">
+            <div class="nv-badge">Simulation</div>
+            <div class="nv-card-icon">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            </div>
+            <h3>Omniverse Integration</h3>
+            <p>Learn to leverage <strong>Digital Twins</strong> for industrial-scale simulation. Connect 3D pipelines and develop custom extensions.</p>
+            <button class="nv-btn" onclick="toggleEnroll(this)">Start Module</button>
+        </div>
+
+        <div class="nv-card">
+            <div class="nv-badge">Performance</div>
+            <div class="nv-card-icon">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+            </div>
+            <h3>CUDA Optimization</h3>
+            <p>Advanced techniques for squeezing every teraflop out of the <strong>Blackwell architecture</strong>. Optimize kernels for next-gen hardware.</p>
+            <button class="nv-btn" onclick="toggleEnroll(this)">Start Module</button>
+        </div>
+    </div>
+
+    <script>
+        // Simple interactive script to simulate enrollment
+        function toggleEnroll(btn) {
+            if (btn.innerText === "START MODULE") {
+                btn.innerText = "IN PROGRESS";
+                btn.classList.add("active");
+            } else if (btn.innerText === "IN PROGRESS") {
+                // Optional: Allow toggling back or navigating
+                // window.location.href = "LINK_TO_LMS"; 
+            }
+        }
+    </script>
+</div>
